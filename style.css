@@ -1,4 +1,6 @@
-
+html, body {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -7,9 +9,6 @@ body {
     color: lightgrey;
 }
 
-html {
-    scroll-behavior: smooth;
-}
 
 .container {
     position: relative;
@@ -714,6 +713,101 @@ footer h1 {
     display: none;
 }
 
+/* SideBar */
+
+.sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 70%;
+    width: 0%;
+    background-color: #000000b8;
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    box-shadow: 0 0 20px rgba(211, 211, 211, 0.411);
+    border-bottom-left-radius: 100%;
+    opacity: 0;
+}
+
+.close-icon {
+    font-size: 40px;
+    column-rule: lightgray;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.sidebar ul {
+    padding-left: 20px;
+}
+
+.sidebar ul li {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: lightgray;
+    font-size: 30px;
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(128, 128, 128, 0.256);
+}
+
+.sidebar .social-icons {
+    padding-left: 20px;
+    margin-top: 60px;
+    text-wrap: nowrap;
+}
+
+.sidebar .social-icons a {
+    font-size: 30px;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+/* Animação Abrir Sidebar */
+
+.sidebar.open-sidebar {
+    animation: openSidebarAnimation 1.5s forwards;
+}
+
+@keyframes openSidebarAnimation {
+    to {
+        width: 80%;
+        opacity: 1;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+
+
+/* Sair sidebar */
+
+
+.sidebar.close-sidebar{
+    animation: closeSidebarAnimation 1.5s forwards;
+}
+
+@keyframes closeSidebarAnimation {
+    from {
+        width: 80%;
+        opacity: 1;
+        bottom: 0;
+        border-radius: 0;
+    }
+    to {
+        width: 0;
+        opacity: 0;
+        bottom: 70%;
+        border-bottom-left-radius: 50%;
+    }
+}
+
+
+
+
+
+
 /* Blur efeito animação */
 
 .autoBlur {
@@ -797,6 +891,10 @@ footer h1 {
 
 @media screen and (max-width:1000px){
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     .blackhole-box video {
         margin-top: -20%;
     }
@@ -879,6 +977,10 @@ font-size: 20px;
 
 @media screen and (max-width:700px) {
     
+    html {
+        scroll-behavior: smooth;
+    }
+
     header {
         position: fixed;
         height: 50px;
@@ -915,7 +1017,7 @@ font-size: 20px;
 
     .scroll-down {
         left: 160px;
-        bottom: -10%;
+        bottom: -20%;
     }
 
     .hero-info h1 {
@@ -926,13 +1028,10 @@ font-size: 20px;
     .hero-vid-box video{
         position: relative;
         height: 350px;
-        top: -80px;
+        top: 80px;
         right: 15%;
     }
 
-    .hero-info button {
-        margin-bottom: 30px;
-    }
 
     .card video {
         width: 100%;
@@ -1032,5 +1131,9 @@ font-size: 20px;
 
     .project-vidbox {
         min-width: 200px;
+    }
+
+    .menu-icon {
+        display: inline;
     }
 }

@@ -3,6 +3,11 @@ const video2 = document.getElementById('projectVideo2');
 const video3 = document.getElementById('projectVideo3');
 const hoverSign = document.querySelector(".hover-sign");
 
+/* sidebar elemeentos */
+const sideBar = document.querySelector('.sidebar');
+const menu = document.querySelector('.menu-icon');
+const closer = document.querySelector('.close-icon');
+
 const videoList = [video1, video2, video3];
 
 videoList.forEach(function(video){
@@ -14,4 +19,17 @@ videoList.forEach(function(video){
         video.pause();
         hoverSign.classList.remove("active")
     })
+})
+
+
+/* sidebar elemeentos */
+
+menu.addEventListener("click", function(){
+    sideBar.classList.remove("close-sidebar")
+    sideBar.classList.add("open-sidebar")
+})
+
+closer.addEventListener("click", function(){
+    sideBar.classList.remove("open-sidebar")
+    sideBar.classList.add("close-sidebar")
 })
